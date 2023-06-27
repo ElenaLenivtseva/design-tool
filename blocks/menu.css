@@ -1,0 +1,39 @@
+.menu__open {
+    display: none;
+    position: fixed;
+    right: 8%;
+    padding: 54px;
+    padding-top: 65px;
+    background: #683C73;
+    width: 335px;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+}
+.menu__close {
+    position: absolute;
+    right: 31px;
+    top: 31px;
+    cursor: pointer;
+}
+.menu__list {
+}
+.menu__item {
+}
+.menu__link {
+    color: #FFFF;
+    font-size: 25px;
+    transition: 0.2s;
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    -ms-transition: 0.2s;
+    -o-transition: 0.2s;
+}
+.menu__item:not(:last-child) {
+    margin-bottom: 30px;
+}
+.menu__link:hover {
+    border-bottom: 1px dashed #ffffff;
+}

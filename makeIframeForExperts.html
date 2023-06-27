@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let data = [
+    {
+        "name": "title",
+        "value": "текст"
+    },
+    {
+        "name": "titleSize",
+        "value": "40"
+    },
+    {
+        "name": "titleColor",
+        "value": "#1c1c1c"
+    },
+    {
+        "name": "expertName",
+        "value": "1"
+    },
+    {
+        "name": "expertDescr",
+        "value": "2"
+    },
+    {
+        "name": "expertVideo",
+        "value": "https://youtu.be/zDjJvlub__E"
+    },
+    {
+        "name": "expertName",
+        "value": "3"
+    },
+    {
+        "name": "expertDescr",
+        "value": "4"
+    },
+    {
+        "name": "expertVideo",
+        "value": "https://youtu.be/zDjJvlub__E"
+    },
+    {
+        "name": "expertName",
+        "value": "5"
+    },
+    {
+        "name": "expertDescr",
+        "value": "6"
+    },
+    {
+        "name": "expertVideo",
+        "value": "https://youtu.be/M72n-y-obv4"
+    },
+    {
+        "name": "expertName",
+        "value": "111"
+    },
+    {
+        "name": "expertDescr",
+        "value": "2"
+    },
+    {
+        "name": "expertVideo",
+        "value": "https://youtu.be/zDjJvlub__E"
+    },
+    {
+        "name": "containerWidth",
+        "value": "70"
+    },
+    {
+        "name": "containerHeight",
+        "value": "400"
+    },
+    {
+        "name": "containerBg",
+        "value": "#ffffff"
+    },
+    {
+        "name": "containerFont",
+        "value": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">                    <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>                    <link href=\"https://fonts.googleapis.com/css2?family=Monomaniac+One&family=Montserrat:wght@300;400;600&family=Nunito:wght@400;700&family=Roboto:wght@400;500&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+        "name": "containerFontName",
+        "value": "Roboto"
+    },
+    {
+        "name": "titleSize",
+        "value": "40"
+    },
+    {
+        "name": "titleColor",
+        "value": "#1c1c1c"
+    },
+    {
+        "name": "titleSize",
+        "value": "40"
+    },
+    {
+        "name": "titleColor",
+        "value": "#1c1c1c"
+    }
+];
+        let names = [
+    {
+        "name": "expertName",
+        "value": "1"
+    },
+    {
+        "name": "expertName",
+        "value": "3"
+    },
+    {
+        "name": "expertName",
+        "value": "5"
+    },
+    {
+        "name": "expertName",
+        "value": "111"
+    }
+];
+        let descr = [
+    {
+        "name": "expertDescr",
+        "value": "2"
+    },
+    {
+        "name": "expertDescr",
+        "value": "4"
+    },
+    {
+        "name": "expertDescr",
+        "value": "6"
+    },
+    {
+        "name": "expertDescr",
+        "value": "2"
+    }
+];
+        let urls = [
+    "zDjJvlub__E",
+    "zDjJvlub__E",
+    "M72n-y-obv4",
+    "zDjJvlub__E"
+];
+        let amount = names.length;
+        console.log(amount)
+        // let firstBtn = `<button class="experts__item tabs__btn tabs__btn_active"><p class="experts__name">${names[0].value}</p>
+        //             <p class="experts__descr">${descr[0].value}</p></button>`
+        //     console.log(firstBtn)
+        // let firstVideo = `<div class="experts__video tabs__pane tabs__pane_show">
+        //             <div class="iframe">
+        //                 <div class="player" id="player-1" data-video-id="${urls[0]}" data-width="100%"></div>
+        //             </div>
+        //         </div>`;
+        //         console.log(firstVideo)
+
+        let patternBtn = `<button class="experts__item tabs__btn"><p class="experts__name"></p>
+                    <p class="experts__descr"></p></button>`;
+        // function createAllBtn (amount, names, descr) {
+        //     let str;
+        //     for (let i = 1; i < amount-1; i++) {
+        //         str = `<button class="experts__item tabs__btn"><p class="experts__name">${names[i].value}</p>
+        //             <p class="experts__descr">${descr[i].value}</p></button>`
+        //         console.log(str);
+        //         return str;
+        //     }
+            
+        //     // let result = str.repeat(amount-1);
+            
+        //     // return result;
+        // }
+        // let allBtn = createAllBtn(amount, names, descr);
+        function createAllBtn2(pattern, amount) {
+            let str = pattern;
+            let newStr = str.repeat(amount);
+            return newStr;
+        }
+
+        let allBtnHTML = createAllBtn2(patternBtn, amount)
+        console.log(allBtnHTML)
+
+        function findInitNames(str) {
+            const regex = /"experts__name">/g;
+            const found = str.match(regex);
+            return found;
+        }
+
+        let foundAtrr = findInitNames(allBtnHTML);
+        console.log(foundAtrr)
+
+        function createNewInnersNames(initialValues, names) {
+            let array = initialValues;
+            for (let i = 0; i < array.length; i++) {
+                array[i] = `"experts__name">${names[i].value}`;
+            }
+            return array;
+        }
+        let createdInnersNames = createNewInnersNames(foundAtrr, names);
+        console.log(createdInnersNames)
+
+        // function changeInnerName(fullstr, newNames) {
+        //     const regex = /"experts__name">/g;
+        //     let newfullStr;
+        //     for (let i = 0; i < newNames.length; i++) {
+        //         newfullStr = fullstr.replace(regex, newNames[i]);
+        //         console.log(newfullStr)
+        //     }
+        //     return newfullStr;
+        // }
+        // let newfullStr = changeInnerName(allBtnHTML, createdInnersNames);
+        // console.log(newfullStr)
+        function justTest(found, newNames) {
+            for (let i = 0; i < found.length; i++) {
+                found[i] = newNames[i]
+            }
+            return found;
+        }
+        let justTesting = justTest(foundAtrr, createdInnersNames);
+        console.log(justTesting)
+
+        
+    </script>
+</body>
+</html>

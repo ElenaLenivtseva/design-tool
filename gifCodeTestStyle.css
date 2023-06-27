@@ -1,0 +1,43 @@
+.gif__container {
+    padding: 10%;
+    background-color: aliceblue;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.gif__title {
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 6%;
+    text-align: center;
+    color: rgb(10, 38, 128);
+}
+.gif__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5%;
+}
+.gif__block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.gif__sign {
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 1%;
+}
+.gif__img {
+    max-width: 100%;
+}
+.gif__block1 {
+}
+.gif__img-wrap {
+
+}
+
+
+.gif__sign1 {
+}
+.gif__block2 {
+}
+.gif__sign2 {
+}

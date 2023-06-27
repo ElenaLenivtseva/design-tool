@@ -1,0 +1,26 @@
+.footer {
+    width: 100%;
+    background: #683C73;
+}
+.footer__wrap {
+    display: flex;
+    align-items: center;
+    padding: 54px 0;
+    color: #FFFF;
+}
+.footer__text {
+    font-size: 40px;
+    margin-right: 10%;
+}
+.footer__mail-wrap {
+    display: flex;
+    align-items: center;
+}
+.footer__mail-img {
+    width: 44px;
+    margin-right: 7px;
+}
+.footer__link {
+    font-size: 30px;
+    color: #FFFF;
+}

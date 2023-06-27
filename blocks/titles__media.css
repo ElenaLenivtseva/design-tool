@@ -1,0 +1,111 @@
+@media screen and (max-width: 1900px) {
+    .title {
+        font-size: 8rem;
+        margin-bottom: 1em;
+    }
+    .step__title {
+        font-size: 5rem;
+        margin-bottom: 1em;
+    }
+}
+@media screen and (max-width: 1800px) {
+    .title {
+        font-size: 7.5rem;
+    }
+    .step__title {
+        font-size: 4.5rem;
+    }
+}
+@media screen and (max-width: 1700px) {
+    .title {
+        font-size: 7rem;
+    }
+}
+@media screen and (max-width: 1600px) {
+    .title {
+        font-size: 6rem;
+    }
+}
+@media screen and (max-width: 1500px) {
+    .title {
+        font-size: 5.5rem;
+    }
+}
+@media screen and (max-width: 1400px) {
+    .title {
+        font-size: 5rem;
+    }
+}
+@media screen and (max-width: 1300px) {
+    .step__title {
+        font-size: 4rem;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .title {
+        font-size: 4.5rem;
+    }
+}
+@media screen and (max-width: 1100px) {
+    .step__title {
+        font-size: 3.5rem;
+    }
+}
+@media screen and (max-width: 900px) {
+    .title {
+        font-size: 4rem;
+    }
+}
+@media screen and (max-width: 800px) {
+    .step__title {
+        font-size: 3rem;
+    }
+}
+@media screen and (max-width: 600px) {
+    .title {
+        font-size: 3.5rem;
+    }
+    .header__component {
+        margin-top: 100px;
+    }
+}
+@media screen and (max-width: 450px) {
+    .header__component {
+        margin-top: 80px;
+    }
+}
+@media screen and (max-width: 400px) {
+    .title {
+        font-size: 3rem;
+    }
+    .step__title {
+        font-size: 2.6rem;
+    }
+    .header__component {
+        margin-top: 40px;
+    }
+}
+@media screen and (max-width: 350px) {
+    .title {
+        font-size: 2.5rem;
+    }
+    .step__title {
+        font-size: 1.9rem;
+    }
+}
+@media screen and (max-width: 300px) {
+    .title {
+        font-size: 2.1rem;
+    }
+    .header__component {
+        margin-top: 30px;
+    }
+}
+@media screen and (max-width: 250px) {
+    .title {
+        font-size: 1.8rem;
+    }
+    .step__title {
+        font-size: 1.5rem;
+    }
+}

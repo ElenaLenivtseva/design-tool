@@ -1,0 +1,91 @@
+
+.container {
+    padding-left: 8.43%;
+    padding-right: 8.43%;
+}
+.header {
+  margin-top: 146px;
+    display: flex;
+    flex-direction: column;
+}
+.menu {
+    display: flex;
+    justify-content: end;
+}
+.menu__img {
+  cursor: pointer;
+}
+.title {
+  font-size: 140px;
+  margin-bottom: 175px;
+  font-weight: 600;
+}
+section {
+  margin-bottom: 125px;
+}
+.video-inst__play {
+  width: 100%;
+  /* height: 849px; */
+}
+.collectDataForm {
+}
+
+.subtitle {
+  font-size: 80px;
+  font-weight: 400;
+  margin-bottom: 65px;
+}
+.subtitle--form {
+  font-size: 37px;
+}
+.subtitle--form-down {
+  margin-bottom: 23px;
+}
+.subtitle--form-desc {
+  margin-bottom: 13px;
+}
+.block {
+  margin-bottom: 40px;
+}
+/* .parameter-top {
+  display: flex;
+  margin-bottom: 23px;
+}
+
+.subtitle--form-style {
+  display: flex;
+  align-items: flex-end;
+  font-weight: 300;
+  font-size: 30px;
+}
+.parameter-top__left {
+  width: 35.5%;
+  padding-right: 13%;
+}
+.parameter-top__right {
+  width: 51.5%;
+}
+.parameter-top__left {
+  width: 35.5%;
+  padding-right: 13%;
+}
+.parameter-top__right {
+  width: 51.5%;
+} */
+
+
+
+.subtitle--form-style {
+  margin-top: 2px;
+  margin-bottom: 30px;
+  font-weight: 300;
+  font-size: 30px;
+}
+.subtitle--descr {
+  font-weight: 300;
+  font-size: 20px;
+}
+
+/* .form__container-num {
+  width: 191px;
+} */

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <iframe frameborder="0" width="100%" height="600px" srcdoc="<html> <style> .true-false {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: 50px 0;
+      }
+      .true-false__wrap {
+        background: #0c0b51;
+        border-radius: 30px;
+        -webkit-border-radius: 30px;
+        -moz-border-radius: 30px;
+        -ms-border-radius: 30px;
+        -o-border-radius: 30px;
+        padding: 62px 124px;
+        min-height: 400px;
+      }
+      .true-false__main {
+        margin-bottom: 70px;
+      }
+      .true-false__title {
+        font-size: 35px;
+        font-weight: 400;
+        margin-bottom: 40px;
+        color: #ffffff;
+      }
+      .true-false__btns {
+        display: flex;
+      }
+      .true-false__btn {
+        background: #d9d9d9;
+        border-radius: 15px;
+        display: flex;
+        width: 25%;
+        height: 40px;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        color: #1c1c1c;
+        -webkit-border-radius: 15px;
+        -moz-border-radius: 15px;
+        -ms-border-radius: 15px;
+        -o-border-radius: 15px;
+        border: none;
+      }
+      .true-false__btn-truth {
+        margin-right: 21px;
+      }
+      .true-false__btn-false {
+      }
+      .true-false__descr {
+        margin-top: 60px;
+        font-size: 25px;
+        color: #ffffff;
+      }
+      .true-false__nav {
+       display: flex;
+       justify-content: space-between;
+       transition: 0.3s;
+       -webkit-transition: 0.3s;
+       -moz-transition: 0.3s;
+       -ms-transition: 0.3s;
+       -o-transition: 0.3s;
+      }
+      .true-false__nav-img {
+        color: #FCFCFC;
+        font-size: 100px;
+        transition: 0.3s;
+      }
+      .true-false__btn:hover {
+        cursor: pointer;
+        opacity: 0.9;
+      }
+      .true-false__nav-img:hover {
+        cursor: pointer;
+        opacity: 0.7;
+      }
+      .true-false__right-answer {
+        background: #b5dc47;
+      }
+      .true-false__wrong-answer {
+        background: #b64b4b;
+      }
+      .true-false__toShort {
+        width: 65%;
+      }
+      .swiper-button-prev, .swiper-rtl .swiper-button-next {
+        left: 6%;
+        right: auto;
+      }
+      .swiper-button-next, .swiper-rtl .swiper-button-prev {
+        right: 7%;
+        left: auto;
+      }
+      .swiper-button-next, .swiper-button-prev {
+        color: #ffffff;
+        top: 250px;
+      } </style>    Roboto </head><body> <div class='true-false'>
+        <div class='true-false__toShort'>
+            <div class='swiper'>
+                <div class='swiper-wrapper'>
+                    
+                <div class='swiper-slide'>
+        <div class='true-false__wrap'>
+            <div class='true-false__main'>
+                <h6 class='true-false__title'> 1 </h6>
+                <div class='true-false__btns'>
+                    <button class='true-false__btn true-false__btn-truth btnClass-0 '>Правда</button>
+                    <button class='true-false__btn true-false__btn-false btnClass-0 '>Ложь</button>
+                </div>
+                <p class='true-false__descr'> значениеПояснения </p>
+            </div'
+        </div>
+        </div><div class='swiper-slide'>
+        <div class='true-false__wrap'>
+            <div class='true-false__main'>
+                <h6 class='true-false__title'> 2 </h6>
+                <div class='true-false__btns'>
+                    <button class='true-false__btn true-false__btn-truth btnClass-1 '>Правда</button>
+                    <button class='true-false__btn true-false__btn-false btnClass-1 '>Ложь</button>
+                </div>
+                <p class='true-false__descr'> значениеПояснения </p>
+            </div>
+        </div>
+        </div> 
+      
+                </div>
+                
+                <div class='swiper-button-prev'></div>
+                <div class='swiper-button-next'></div>
+                
+                
+            </div>
+        </div>
+      </div> <script>
+      import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.esm.browser.min.js'
+            
+              const swiper = new Swiper('.swiper', {
+                  // Navigation arrows
+                  navigation: {
+                      nextEl: '.swiper-button-next',
+                      prevEl: '.swiper-button-prev',
+                  },
+              });
+      '
+              let response = <div class='swiper-slide'>
+        <div class='true-false__wrap'>
+            <div class='true-false__main'>
+                <h6 class='true-false__title'> 1 </h6>
+                <div class='true-false__btns'>
+                    <button class='true-false__btn true-false__btn-truth btnClass-0 '>Правда</button>
+                    <button class='true-false__btn true-false__btn-false btnClass-0 '>Ложь</button>
+                </div>
+                <p class='true-false__descr'> значениеПояснения </p>
+            </div'
+        </div>
+        </div><div class='swiper-slide'>
+        <div class='true-false__wrap'>
+            <div class='true-false__main'>
+                <h6 class='true-false__title'> 2 </h6>
+                <div class='true-false__btns'>
+                    <button class='true-false__btn true-false__btn-truth btnClass-1 '>Правда</button>
+                    <button class='true-false__btn true-false__btn-false btnClass-1 '>Ложь</button>
+                </div>
+                <p class='true-false__descr'> значениеПояснения </p>
+            </div>
+        </div>
+        </div> ,[object Object],[object Object],[object Object],[object Object],.btnClass-0,.btnClass-1,false,true;
+                    let facts = response[1];
+                    let descrsDirty = response[2];
+                    let btnsClass = response[3];
+                    let answers = response[4];
+                    let descrsClean = [];
+                    descrsClean.length = descrsDirty.length;
+                    for (let i = 0; i < descrsDirty.length; i++) {
+                        descrsClean[i] = descrsDirty[i].value;
+                        
+                    }
+                    console.log(descrsClean)
+                    document.addEventListener('DOMContentLoaded', {handleEvent: pullTitles, facts: facts})
+                    
+                    function pullTitles(event) {
+                      let titles = this.facts;
+                      let allTitlesElem = document.querySelectorAll('.true-false__title');
+                      for (let i = 0; i < allTitlesElem.length; i++) {
+                        allTitlesElem[i].innerText = titles[i].value;
+                      }
+                    }
+            
+                    function forAllCards(btnsClass, answers, descrsClean) {
+                        for (let i = 0; i < answers.length; i++) {
+                            let descr = descrsClean[i];
+                            
+                            let answer = answers[i];
+                            console.log(answer)
+                            let btnTest = document.querySelectorAll(btnsClass[i]);
+                        
+                            console.log(btnTest)
+                            btnTest.forEach(element => {
+                                    element.addEventListener('click', {handleEvent: handler, answer: answer, descr: descr});
+                            });
+                        }
+                    }
+                    forAllCards(btnsClass, answers, descrsClean)
+                    // let descr = 'залупа';
+                    // let answer = true;
+                    // let btnTest = document.querySelectorAll('.testBtn');
+                    
+                    function handler(event) {
+                        let answer = this.answer;
+                        let descr = this.descr;
+                        // полный тупизм с копией кода, но по какой-то неведомой причине норм решение, работавшее вчера, уже не работает, а это, полностью копирущее его, но с ненужным никому повторением кусков - да
+                        // нажали на правду и правильный ответ тоже правда
+                        if (event.target.classList.contains('true-false__btn-truth')&&answer==true) {
+                            event.target.classList.add('true-false__right-answer')
+                            if (event.target.nextSibling.nextSibling) {
+                                event.target.nextSibling.nextSibling.classList.add('true-false__wrong-answer');
+                            }
+                        }
+                        // нажали на ложь и правильный ответ тоже ложь
+                        if (event.target.classList.contains('true-false__btn-false')&&answer==false) {
+                            event.target.classList.add('true-false__right-answer')
+                            if (event.target.previousSibling.previousSibling) {
+                                 event.target.previousSibling.previousSibling.classList.add('true-false__wrong-answer');
+                            }
+                        }
+                        // нажали на правду, а правильный ответ ложь
+                        if (event.target.classList.contains('true-false__btn-truth')&&answer==false) {
+                            event.target.classList.add('true-false__wrong-answer')
+                            if (event.target.nextSibling.nextSibling) {
+                                event.target.nextSibling.nextSibling.classList.add('true-false__right-answer');
+                            }
+                        }
+                        // нажали на ложь, а правильный ответ правда
+                        if (event.target.classList.contains('true-false__btn-false')&&answer==true) {
+                            event.target.classList.add('true-false__wrong-answer')
+                            if (event.target.previousSibling.previousSibling) {
+                                 event.target.previousSibling.previousSibling.classList.add('true-false__right-answer');
+                            }
+                        }
+                        // let allBtns = event.target.parentNode.childNodes;
+                        // console.log(allBtns)
+                        // // allBtns.forEach(element => {
+                        // //             element.removeEventListener('click', {handleEvent: handler, answer: answer, descr: descr});
+                        // // });
+                        // for (let i = 0; i < allBtns.length; i++) {
+                        //     console.log(allBtns[i])
+                        //     // какого-то фига там еще лежит элемент #text, и он посередине. Т.е. длина массива не 2, как я думала,, а три, поэтому внизу я проверяю, чтоб не попало на этого чудака
+                        //     // allBtns[i].removeEventListener('click', {handleEvent: handler, answer: answer, descr: descr});
+                        //     if (i==0 || i==2) {
+                        //         allBtns[i].style.pointerEvents = "none";
+                        //     }
+                            
+                                
+                        // }
+                        // let parent = event.target.parentElement.parentElement;
+                        // let descrInParent = parent.lastChild.previousElementSibling;
+                        // console.log(descrInParent);
+                        // descrInParent.textContent = descr;
+                        // console.log(answer)
+            
+                        // if (event.target.classList.contains('true-false__btn-truth')&&answer==true || event.target.classList.contains('true-false__btn-false')&&answer==false) {
+                        //     event.target.classList.add('true-false__right-answer');
+                        //     if (event.target.nextSibling.nextSibling) {
+                        //         event.target.nextSibling.nextSibling.classList.add('true-false__wrong-answer');
+                        //     }
+                        //     if (event.target.previousSibling.previousSibling) {
+                        //         event.target.previousSibling.previousSibling.classList.add('true-false__wrong-answer');
+                        //     }
+                        // } else {
+                        //     event.target.classList.add('true-false__wrong-answer');
+                        //     if (event.target.nextSibling.nextSibling) {
+                        //         event.target.nextSibling.nextSibling.classList.add('true-false__right-answer');
+                        //     }
+                        //     if (event.target.previousSibling.previousSibling) {
+                        //         event.target.previousSibling.previousSibling.classList.add('true-false__right-answer');
+                        //     }
+                        // }
+                        // let allBtns = event.target.parentNode.childNodes;
+            
+                        // for (let i = 0; i < allBtns.length; i++) {
+                        //     console.log(allBtns[i])
+                        //     allBtns[i].removeEventListener('click', {handleEvent: handler, answer: answer, descr: descr});
+                                
+                        // }
+                        let parent = event.target.parentElement.parentElement;
+                        console.log(parent)
+                        let descrInParent = parent.lastChild.previousElementSibling.nextSibling;
+                        console.log(descrInParent);
+                        descrInParent.textContent = descr;
+                    }
+      </script></body></html>"></iframe> 
+</body>
+</html>

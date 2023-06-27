@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="experts__item tabs__btn tabs__btn_active"> <p class="experts__name"> Семен </p> <p class="experts__descr"> Пилот </p> </button><button class="experts__item tabs__btn"> <p class="experts__name"> Филлип </p> <p class="experts__descr"> Стиляга </p> </button> <button class="experts__item tabs__btn"> <p class="experts__name"> Серкан </p> <p class="experts__descr"> Архитектор </p> </button> <button class="experts__item tabs__btn"> <p class="experts__name"> Идэ </p> <p class="experts__descr"> Ландштафтный дизайнер </p> </button>  
+    <script>
+    let data = [
+    {
+        "name": "title",
+        "value": "nnnnnnnnnnn"
+    },
+    {
+        "name": "titleSize",
+        "value": "40"
+    },
+    {
+        "name": "titleColor",
+        "value": "#1c1c1c"
+    },
+    {
+        "name": "expertName",
+        "value": "1"
+    },
+    {
+        "name": "expertDescr",
+        "value": "2"
+    },
+    {
+        "name": "expertVideo",
+        "value": ""
+    },
+    {
+        "name": "expertName",
+        "value": "3"
+    },
+    {
+        "name": "expertDescr",
+        "value": "4"
+    },
+    {
+        "name": "expertVideo",
+        "value": "https://youtu.be/3Cdo8MRb3RE"
+    },
+    {
+        "name": "containerWidth",
+        "value": "70"
+    },
+    {
+        "name": "containerHeight",
+        "value": "400"
+    },
+    {
+        "name": "containerBg",
+        "value": "#ffffff"
+    },
+    {
+        "name": "containerFont",
+        "value": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">                    <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>                    <link href=\"https://fonts.googleapis.com/css2?family=Monomaniac+One&family=Montserrat:wght@300;400;600&family=Nunito:wght@400;700&family=Roboto:wght@400;500&display=swap\" rel=\"stylesheet\">"
+    },
+    {
+        "name": "containerFontName",
+        "value": "Roboto"
+    },
+    {
+        "name": "nameSize",
+        "value": "40"
+    },
+    {
+        "name": "nameColor",
+        "value": "#1c1c1c"
+    },
+    {
+        "name": "SignSize",
+        "value": "40"
+    },
+    {
+        "name": "SignColor",
+        "value": "#1c1c1c"
+    }
+]
+        let descr = [
+    {
+        "name": "expertDescr",
+        "value": "Пилот"
+    },
+    {
+        "name": "expertDescr",
+        "value": "Стиляга"
+    },
+    {
+        "name": "expertDescr",
+        "value": "Архитектор"
+    },
+    {
+        "name": "expertDescr",
+        "value": "Ландштафтный дизайнер"
+    }
+];
+        let urls = [
+            "3Cdo8MRb3RE",
+            "3Cdo8MRb3RE",
+            "M72n-y-obv4",
+            "3Cdo8MRb3RE"
+        ];
+    
+        let amount = names.length;
+        console.log(amount)
+
+        // дублировать паттерн строки столько раз, сколько укажет юзер 
+        function createAll(pattern, firstOne, amount) {
+            let str = pattern;
+            let newStr = firstOne + str.repeat(amount-1);
+            return newStr;
+        }
+        // разбить строку на массив
+        function mySplit(array) {
+            let strArray = array.split(' ');
+            return strArray;
+        }
+        // найти индексы элементов с определенными значениями (что нужно заменить в строке)
+        function findIndexInArray(arrayFromStr, value) {
+            let indices = [];
+            let strArray = arrayFromStr;
+            let element = value;
+            let idx = strArray.indexOf(element);
+            while (idx != -1) {
+                indices.push(idx);
+                idx = strArray.indexOf(element, idx + 1);
+            }
+            return indices;
+        } 
+        // поменять то, что в эих индексах на наши варианты (из формы)
+        function changeStrArray(arrayFromStr, parameterTochange, index, url) {
+            let strArray = arrayFromStr;
+            let parameter = parameterTochange;
+            let allIndexes = index;
+            if (url == 'url') {
+                for (let i = 0; i < allIndexes.length; i++) {
+                    strArray[allIndexes[i]] = `"${parameter[i]}"`;
+                } 
+            } else if (url == 'id') {
+                for (let i = 0; i < allIndexes.length; i++) {
+                    strArray[allIndexes[i]] = parameter[i];
+                }
+            } else {
+                for (let i = 0; i < allIndexes.length; i++) {
+                    strArray[allIndexes[i]] = parameter[i].value;
+                }
+            }
+            return strArray;
+        }
+        // вернуть строке ее строковый вид
+        // почему-то метод join не работает. Separator в параметры не стала добавлять
+        function myJoin(array) {
+            let str = "";
+            for (let i = 0; i < array.length; i++) {
+                str+=array[i];
+                str+=" ";
+            }
+            return str;
+        }
+        // для параметра ID в видео
+        function makeArrayID(amount) {
+            let arrayId = [];
+            let prefix = 'player-';
+            arrayId.length = amount;
+            for (let i = 0; i < arrayId.length; i++) {
+                arrayId[i] = prefix + (i+1);
+            }
+            
+            return arrayId;
+        }
+        let ids = makeArrayID(amount);
+
+
+        function makeBtns() {
+            let firstBtn = `<button class="experts__item tabs__btn tabs__btn_active"> <p class="experts__name"> значениеимени </p> <p class="experts__descr"> значениесвойства </p> </button>`;
+            let patternBtn = '<button class="experts__item tabs__btn"> <p class="experts__name"> значениеимени </p> <p class="experts__descr"> значениесвойства </p> </button> ';
+            let allBtnHTML = createAll(patternBtn, firstBtn, amount);
+            let strArray = mySplit(allBtnHTML);
+            let indexOfNames = findIndexInArray(strArray, 'значениеимени');
+            let changedArray = changeStrArray(strArray, names, indexOfNames)
+            let indexOfDescr = findIndexInArray(strArray, 'значениесвойства');
+            let changedArray2 = changeStrArray(strArray, descr, indexOfDescr)
+            let btnsReady = myJoin(changedArray2);
+            return btnsReady;
+        }
+
+        
+        function makeVideos() {
+            let firstVideo = '<div class="experts__video tabs__pane tabs__pane_show"> <div class="iframe"> <div class="player" id=" значениеID " data-video-id= "значениеURL" data-width="100%"> </div> </div> </div> ';
+            let patternVideo = '<div class="experts__video tabs__pane"> <div class="iframe"> <div class="player" id=" значениеID " data-video-id= "значениеURL" data-width="100%"> </div> </div> </div> ';
+            let allVideoHTML = createAll(patternVideo, firstVideo, amount);
+            let strArray2 = mySplit(allVideoHTML);
+            let indexOfVideo = findIndexInArray(strArray2, '"значениеURL"');
+            let indexOfVideo2 = findIndexInArray(strArray2, 'значениеID');
+            let changedArrayVideo = changeStrArray(strArray2, urls, indexOfVideo, 'url')
+            let changedArrayVideo2 = changeStrArray(strArray2, ids, indexOfVideo2, 'id')
+            let videoReady = myJoin(changedArrayVideo2);
+            return videoReady;
+        }
+
+        let btns = makeBtns();
+        let videos = makeVideos();
+ 
+    
+    </script>
+</body>
+</html>

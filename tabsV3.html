@@ -1,0 +1,217 @@
+
+              <!doctype html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Табы на чистом CSS и JavaScript - Пример 07</title>
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #212529;
+      background-color: #fff;
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
+    .tabs {
+      border: 1px solid #e0e0e0;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .tabs__nav {
+      display: flex;
+      flex-wrap: wrap;
+      list-style-type: none;
+      background: #fafafa;
+      margin: 0;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .tabs__btn {
+      padding: 0.5rem 0.75rem;
+      text-decoration: none;
+      color: black;
+      text-align: center;
+      flex-shrink: 0;
+      flex-grow: 1;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+
+    .tabs__btn_active {
+      background: #e0e0e0;
+      cursor: default;
+    }
+
+    .tabs__btn:not(.tabs__btn_active):hover,
+    .tabs__btn:not(.tabs__btn_active):focus {
+      background-color: #eee;
+    }
+
+    .tabs__content {
+      padding: 1rem;
+    }
+
+    .tabs__pane {
+      display: none;
+    }
+
+    .tabs__pane_show {
+      display: block;
+    }
+
+    .iframe {
+      --bs-aspect-ratio: calc(9 / 16 * 100%);
+      position: relative;
+      width: 100%;
+    }
+
+    .iframe::before {
+      display: block;
+      padding-top: var(--bs-aspect-ratio);
+      content: "";
+    }
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="tabs" id="tabs-1">
+    <div class="tabs__nav">
+      <button class="tabs__btn tabs__btn_active">Вкладка 1</button>
+      <button class="tabs__btn">Вкладка 2</button>
+      <button class="tabs__btn">Вкладка 3</button>
+    </div>
+    <div class="tabs__content">
+      <div class="tabs__pane tabs__pane_show">
+        <div class="iframe">
+          <div class="player" id="player-1" data-video-id="M72n-y-obv4" data-width="100%" data-height="315"></div>
+        </div>
+      </div>
+      <div class="tabs__pane">
+        <div class="iframe">
+          <div class="player" id="player-2" data-video-id="Cy35h6DF8hY" data-width="100%" data-height="315"></div>
+        </div>
+      </div>
+      <div class="tabs__pane">
+        
+        <div class="iframe">
+          <div class="player" id="player-3" data-video-id="6tyB97J1cVA" data-width="100%" data-height="315"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    class ItcTabs {
+      constructor(target, config) {
+        const defaultConfig = {};
+        this._config = Object.assign(defaultConfig, config);
+        this._elTabs = typeof target === 'string' ? document.querySelector(target) : target;
+        this._elButtons = this._elTabs.querySelectorAll('.tabs__btn');
+        this._elPanes = this._elTabs.querySelectorAll('.tabs__pane');
+        this._init();
+        this._events();
+      }
+      _init() {
+        this._elTabs.setAttribute('role', 'tablist');
+        this._elButtons.forEach((el, index) => {
+          el.dataset.index = index;
+          el.setAttribute('role', 'tab');
+          this._elPanes[index].setAttribute('role', 'tabpanel');
+        });
+      }
+      show(elLinkTarget) {
+        const elPaneTarget = this._elPanes[elLinkTarget.dataset.index];
+        const elLinkActive = this._elTabs.querySelector('.tabs__btn_active');
+        const elPaneShow = this._elTabs.querySelector('.tabs__pane_show');
+        if (elLinkTarget === elLinkActive) {
+          return;
+        }
+        this._paneFrom = elPaneShow;
+        this._paneTo = elPaneTarget;
+        elLinkActive ? elLinkActive.classList.remove('tabs__btn_active') : null;
+        elPaneShow ? elPaneShow.classList.remove('tabs__pane_show') : null;
+        elLinkTarget.classList.add('tabs__btn_active');
+        elPaneTarget.classList.add('tabs__pane_show');
+        this._elTabs.dispatchEvent(new CustomEvent('tab.itc.change', {
+          detail: {
+            elTab: this._elTabs,
+            paneFrom: this._paneFrom,
+            paneTo: this._paneTo
+          }
+        }));
+        elLinkTarget.focus();
+      }
+      showByIndex(index) {
+        const elLinkTarget = this._elButtons[index];
+        elLinkTarget ? this.show(elLinkTarget) : null;
+      };
+      _events() {
+        this._elTabs.addEventListener('click', (e) => {
+          const target = e.target.closest('.tabs__btn');
+          if (target) {
+            e.preventDefault();
+            this.show(target);
+          }
+        });
+      }
+    }
+
+    const elTab = document.querySelector('.tabs');
+    new ItcTabs(elTab);
+
+    const elScript = document.createElement('script');
+    elScript.src = 'https://www.youtube.com/iframe_api';
+    document.head.append(elScript);
+
+    const players = {};
+    function onYouTubeIframeAPIReady() {
+      document.querySelectorAll('.player').forEach(el => {
+        players[el.id] = new YT.Player(el.id, {
+          height: el.dataset.height,
+          width: el.dataset.width,
+          videoId: el.dataset.videoId
+        });
+      })
+    }
+
+    elTab.addEventListener('tab.itc.change', (e) => {
+      const paneFrom = e.detail.paneFrom;
+      if (paneFrom) {
+        const player = paneFrom.querySelector('.player');
+        player ? players[player.id].pauseVideo() : null;
+      }
+    })
+  </script>
+
+</body>
+
+</html>
+
+						

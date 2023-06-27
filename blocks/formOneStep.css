@@ -1,0 +1,43 @@
+@media screen and (max-width: 1000px) {
+    .subtitle--form-down__one {
+        font-size: 2rem;
+    }
+}
+@media screen and (max-width: 800px) {
+    .subtitle--form-down__one {
+        font-size: 1.7rem;
+    }
+    .form-one__left {
+        width: 100%;
+    }
+    .form__submit-one {
+        font-size: 1.5rem;
+    }
+}
+@media screen and (max-width: 400px) {
+    .form-one__without-btn {
+        padding: 30px;
+    }
+}
+@media screen and (max-width: 350px) {
+    .form-one__input {
+        height: 10px;
+    }
+}
+@media screen and (max-width: 300px) {
+    .subtitle--form-down__one {
+        font-size: 1.3rem;
+    }
+    .form__submit-one {
+        font-size: 1rem;
+        height: 35px;
+        margin-top: 25px;
+    }
+    
+}
+@media screen and (max-width: 250px) {
+    .form-one__input {
+        height: 5px;
+    }
+    
+}

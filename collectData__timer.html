@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="/blocks/input.css">
+    <link rel="stylesheet" href="/blocks/menu.css">
+    <link rel="stylesheet" href="/blocks/form.css">
+    <link rel="stylesheet" href="/blocks/parameter.css">
+    <link rel="stylesheet" href="/blocks/result.css">
+    <link rel="stylesheet" href="/blocks/footer.css">
+    <link rel="stylesheet" href="collectDataTimerBefore.css">
+    <!-- <link rel="stylesheet" href="/blocks/experts__media.css">
+    <link rel="stylesheet" href="/blocks/timer__media.css"> -->
+    <link rel="stylesheet" href="/blocks/menu__media.css">
+    <link rel="stylesheet" href="/blocks/section__media.css">
+    <link rel="stylesheet" href="/blocks/titles__media.css">
+    <link rel="stylesheet" href="/blocks/result__media.css">
+    <link rel="stylesheet" href="/blocks/collectExpertsMedia.css">
+    <link rel="stylesheet" href="/blocks/footer__media.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard-polyfill/2.8.6/clipboard-polyfill.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header class="header header__component">
+      <div class="menu">
+        <img class="menu__img" src="/images/menu.png" alt="" >
+      </div>
+      <nav class="menu__open">
+        <img class="menu__close" src="/images/menu__close.png" alt="" >
+        <ul class="menu__list">
+          <li class="menu__item"><a class="menu__link" href="index.html">Главная</a></li>
+          <li class="menu__item"><a class="menu__link" href="collectData__experts.html">Блок с экспертами</a></li>
+          <li class="menu__item"><a class="menu__link" href="collectData__true.html">Правда/Ложь</a></li>
+          <li class="menu__item"><a class="menu__link" href="collectData__timer.html">Таймер</a></li>
+        </ul>
+      </nav>
+      <h2 class="title">Таймер до даты</h2>
+    </header>
+    <main>
+      <section class="video-inst">
+        <video class="video-inst__play" controls>
+          <source src="/images/ТАЙМЕР ИНСТРУКЦИЯ.mp4">
+        </video>
+      </section>
+      <section class="collectDataForm">
+        <form class="form" id="formTimer" action="handler__timer.js">
+          <div class="form__wrap">
+            <div class="form__content">
+              <h4 class="subtitle">Контент</h4>
+              <div class="parameter">
+                <div class="parameter__left">
+                  <p class="subtitle--form subtitle--form-down">Дата события</p>
+                  <input class="input input--date" type="date" name="date" id="date" required>
+              
+                </div>
+                <div class="parameter__right">
+                  
+                </div>
+              </div>
+              <div class="parameter parameter__title">
+                <div class="parameter__left">
+                  <p class="subtitle--form subtitle--form-down">Заголовок</p>
+                  <input class="input input--text form__container-input" type="text" name="title" id="title" min="1"  required>
+                </div>
+                <div class="parameter__right">
+                  <p class="subtitle--form-style">Стили</p>
+                  <div class="parameter__style">
+                    <div class="parameter__width">
+                      <input class="input input--number parameter__input-num" type="number" name="titleSize" value="40" min="12" max="120">
+                      <p class="parametrer__width-units">px</p>
+                    </div>
+                    <input class="input input--color parameter__input-color" type="color" name="titleColor" value="#1C1C1C">
+                  </div>
+                </div>
+              </div>
+              <div class="parameter parameter__title">
+                <div class="parameter__left">
+                  <p class="subtitle--form">Цифры</p>
+                </div>
+                <div class="parameter__right">
+                  <div class="parameter__style">
+                    <div class="parameter__width">
+                      <input class="input input--number parameter__input-num" type="number" name="numberSize" value="70" min="12" max="120">
+                      <p class="parametrer__width-units">px</p>
+                    </div>
+                    <input class="input input--color parameter__input-color" type="color" name="numberColor" value="#5D71D0">
+                  </div>
+                </div>
+              </div>
+              <div class="parameter parameter__title">
+                <div class="parameter__left">
+                  <p class="subtitle--form">Подписи</p>
+                </div>
+                <div class="parameter__right">
+                  <div class="parameter__style">
+                    <div class="parameter__width">
+                      <input class="input input--number parameter__input-num" type="number" name="signSize" value="14" min="12" max="120">
+                      <p class="parametrer__width-units">px</p>
+                    </div>
+                    <input class="input input--color parameter__input-color" type="color" name="signColor" value="#683C73">
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            <div class="form__container">
+              <h4 class="subtitle">Контейнер</h4>
+              <div class="form__container-wrap">
+                <div class="form__container-item">
+                  <div class="form__item-text">
+                    <p class="subtitle--form subtitle--form-desc">Ширина</p>
+                  <p class="subtitle--descr">в процентах <br>от размера экрана</p>
+                  </div>    
+                  <!-- <input class="input input--number" type="number" name="title" id="title" required> -->
+                  <div class="parameter__width">
+                    <input class="input input--number form__container-num form__container-input" type="number" name="containerWidth" value="70" min="40" max="100">
+                    <p class="parametrer__width-units">%</p>
+                  </div>
+                </div>
+                <div class="form__container-item">
+                  <div class="form__item-text">          
+                    <p class="subtitle--form subtitle--form-desc">Высота</p>
+                    <p class="subtitle--descr">в пикселях</p>
+                  </div>
+                  <div class="parameter__width">
+                    <input class="input input--number form__container-num form__container-input" type="number" name="containerHeight" value="400" min="400" max="800">
+                    <p class="parametrer__width-units">px</p>
+                  </div>
+                  <!-- <input class="input input--number" type="number" name="title" id="title" required> -->
+                
+                </div>
+                <div class="form__container-item form__container-item--small">
+                  <div class="form__item-text">  
+                    <p class="subtitle--form subtitle--form-desc">Цвет</p>
+                    <p class="subtitle--descr">непрозрачный</p>
+                  </div>
+                  <input class="input input--color form__container-color form__container-input" type="color" name="containerBg" id="title" value="#FFFFFF" required>
+                
+                </div>
+                <div class="form__container-item">
+                  <div class="form__item-text">  
+                    <p class="subtitle--form subtitle--form-desc">Шрифт</p>
+                    <p class="subtitle--descr">URL шрифта из <a href="">Google Fonts</a>  <br>Выберите одно начертание. Во второе поле введите только название шрифта.</p>
+                  </div>
+                  <input class="input input--text form__container-input" type="text" name="containerFont" min="1" value='<link rel="preconnect" href="https://fonts.googleapis.com">
+                  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">' required>
+                  
+                  <input class="input input--text form__container-input" type="text" name="containerFontName" value="Roboto" min="1" required>
+                
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="button form__submit form__timer form__submit-two" type="submit">Сгенерировать код</button>
+        </form>
+      </section>
+      <section class="result">
+        <!-- <input class="result__code" type="text" id="content" value="Код автоматически обновляется при нажатии на кнопку «Сгенерировать»." disabled> -->
+        <div class="result__code">
+          <p class="result__text" id="content">Здесь будет ваш код. <br>Он автоматически обновляется <br>при нажатии на кнопку «Сгенерировать».</p>
+        </div>
+        <a class="result__copy" id="copy">
+          <img class="result__copy-img" src="/images/copy3.png" alt="Скопировать код" >
+        </a>
+      </section>
+    </main>
+  </div>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__wrap">
+          <p class="footer__text">Предложите свои идеи!</p>
+          <div class="footer__mail-wrap">
+            <img class="footer__mail-img" src="/images/email.png" alt="">
+            <a class="footer__link" href="mailto:lenivtseva.lena@yandex.ru">lenivtseva.lena@yandex.ru</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+  <!-- </div> -->
+      <!-- <input class="result__text" type="text" id="content" value="Здесь будет ваш код" disabled>
+      
+      <button id="copy" title="Copy Textarea Content">Copy</button> -->
+      <!-- <div class="result__text"></div> -->
+      <!-- <div class="result__wrapper">
+        <input class="result__text" type="text" id="result__text" disabled>
+        <button class="result__button" id="result__button">Скопировать код</button>
+      </div> -->
+      
+    </div>
+    <!--  -->
+</body>
+<script src="menu.js"></script>
+<script src="handler__timer.js"></script>
+</html>
